@@ -6,11 +6,19 @@
 }
 
 /* Body and background */
+html, body {
+    height: 100%; /* Ensure body takes up full height */
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Consider using a more readable font like Roboto or Verdana */
     background: #0d0d3c; /* Dark blue */
     color: white;
     line-height: 1.6;
+    font-size: 16px; /* Ensure a minimum font size of 16px */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out header, main content, and footer */
 }
 
 /* Header */
@@ -36,19 +44,23 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #f0f0f0;
+    color: #f0f0f0; /* Light gray text */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
+    font-size: 1.1rem; /* Slightly larger font size for better readability */
 }
 
-nav ul li a:hover {
-    color: #00f9ff; /* Neon blue */
+/* Ensure sufficient contrast for links */
+nav ul li a:focus, nav ul li a:hover {
+    color: #00c7d0; /* More distinguishable hover color (teal) */
+    background-color: #111; /* Background change on hover for better visibility */
 }
 
 /* Main content */
 main {
     padding: 40px 20px;
+    flex: 1; /* Ensures main content takes up remaining space */
 }
 
 .intro {
@@ -68,7 +80,7 @@ main {
 
 .cta-button {
     display: inline-block;
-    background: #00f9ff;
+    background: #00f9ff; /* Bright blue */
     color: black;
     padding: 10px 20px;
     text-decoration: none;
@@ -77,8 +89,9 @@ main {
     transition: background 0.3s;
 }
 
+/* Ensure sufficient contrast for buttons */
 .cta-button:hover {
-    background: #00d8cc;
+    background: #00d8cc; /* Slightly darker blue for hover */
 }
 
 /* Footer */
@@ -87,4 +100,10 @@ footer {
     padding: 10px;
     background: #111;
     margin-top: 40px;
+}
+
+/* Make sure links are clear when they get focus or are clicked */
+a:focus, .cta-button:focus {
+    outline: 3px solid #00f9ff; /* Add focus outline for accessibility */
+    outline-offset: 2px;
 }
