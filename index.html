@@ -1,36 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Epsilon 3: The Space Colony</title>
-		<link rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<header>
-			<h1>Welcome to Epsilon 3</h1>
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="features.html">Features</a></li>
-					<li><a href="options.html">Options</a></li>
-					<li><a href="prices.html">Prices</a></li>
-					<li><a href="https://www.nasa.gov" target="_blank">Learn More About Space</a></li>
-				</ul>
-			</nav>
-		</header>
-		
-		<main>
-			<section class="intro">
-				<h2>The Future of Human Space Exploration</h2>
-				<p>Join us on Epsilon 3, a state-of-the-art space colony designed to expand human life beyond Earth. Live in a sustainable and high-tech environment, with advanced technology and unparalleled safety.</p>
-				<p>Explore the stars and become the next chapter in human history</p>
-				<a href="features.html" class="cta-button">Discover Our Features</a>
-			</section>
-		</main>
-		
-		<footer>
-			<p>&copy; 2025 Epsilon 3 Corporation | All Rights Reserved</p>
-		</footer>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epsilon 3 & Epsilon 3A: The Space Colonies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Epsilon 3 and Epsilon 3A</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="options.html">Options</a></li>
+                <li><a href="prices.html">Prices</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Epsilon 3A</a>
+                    <div class="dropdown-content">
+                        <a href="epsilon-3a-features.html">Features</a>
+                        <a href="epsilon-3a-options.html">Options</a>
+                        <a href="epsilon-3a-advantages.html">Advantages</a>
+                        <a href="epsilon-3a-prices.html">Prices</a>
+                    </div>
+                </li>
+                <li><a href="https://www.nasa.gov" target="_blank">Learn More About Space</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>The Future of Human Space Exploration</h2>
+            <p>Join us on Epsilon 3 or the new Epsilon 3A, a state-of-the-art space colony designed to expand human life beyond Earth. Live in a sustainable, high-tech environment with advanced technology and unparalleled safety.</p>
+            <p>Explore the stars and become the next chapter in human history.</p>
+            <a href="features.html" class="cta-button">Discover Our Features</a>
+        </section>
+
+        <section class="intro">
+            <h2>Introducing Epsilon 3A</h2>
+            <p>Epsilon 3A is the next generation of space colonization, with more advanced AI systems, enhanced sustainability, and cutting-edge technology for a better space living experience.</p>
+            <a href="epsilon-3a-features.html" class="cta-button">Discover Epsilon 3A Features</a>
+        </section>
+
+        <section class="slideshow">
+            <h2>Visual Tour of Epsilon 3A</h2>
+            <div class="slideshow-container">
+                <div class="slide">
+                    <img src="C:\Users\siams\OneDrive - Virginia's Community Colleges\Desktop\Spring 2025\CS 312 Internet Concepts\Assignments\Epsilon3A_SpaceColony\Epsilon 3Landing.jpg" alt="Epsilon 3A">
+                </div>
+                <div class="slide">
+                    <img src="C:\Users\siams\OneDrive - Virginia's Community Colleges\Desktop\Spring 2025\CS 312 Internet Concepts\Assignments\Epsilon3A_SpaceColony\ResidentialDistrict.jpg" alt="Epsilon 3A Residential">
+                </div>
+                <div class="slide">
+                    <img src="C:\Users\siams\OneDrive - Virginia's Community Colleges\Desktop\Spring 2025\CS 312 Internet Concepts\Assignments\Epsilon3A_SpaceColony\Biodome & Agriculture Center.jpg" alt="Epsilon 3A Agriculture">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Epsilon 3 Corporation | All Rights Reserved</p>
+    </footer>
+
+    <script>
+// Slideshow functionality
+let slideIndex = 0;
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slide");
+    
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+showSlides(); // Initial call to start the slideshow
+</script>
+</body>
 </html>
