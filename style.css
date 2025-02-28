@@ -1,109 +1,171 @@
-/* Reset some basic styles */
-* {
+/* General Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    overflow-y: scroll; /* Ensures the scrollbar is always visible */
 }
 
-/* Body and background */
-html, body {
-    height: 100%; /* Ensure body takes up full height */
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px; /* Adjust the width of the scrollbar */
 }
 
-body {
-    font-family: Arial, sans-serif; /* Consider using a more readable font like Roboto or Verdana */
-    background: #0d0d3c; /* Dark blue */
-    color: white;
-    line-height: 1.6;
-    font-size: 16px; /* Ensure a minimum font size of 16px */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Space out header, main content, and footer */
+::-webkit-scrollbar-thumb {
+    background-color: #0073e6;
+    border-radius: 10px;
+    border: 3px solid #f4f4f9; /* Adds space between the thumb and track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #005bb5;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
 }
 
 /* Header */
 header {
-    background: #111;
+    background-color: #00274d;
+    color: white;
     padding: 20px;
     text-align: center;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    text-align: center;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
 }
 
 nav ul li a {
-    color: #f0f0f0; /* Light gray text */
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
-    font-size: 1.1rem; /* Slightly larger font size for better readability */
+    padding: 10px;
+    display: block;
+	
 }
 
-/* Ensure sufficient contrast for links */
-nav ul li a:focus, nav ul li a:hover {
-    color: #00c7d0; /* More distinguishable hover color (teal) */
-    background-color: #111; /* Background change on hover for better visibility */
+/* Dropdown Menu */
+nav ul li a:hover {
+    background-color: #0073e6;
 }
 
-/* Main content */
-main {
-    padding: 40px 20px;
-    flex: 1; /* Ensures main content takes up remaining space */
-}
-
-.intro {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.intro h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.intro p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.cta-button {
+nav ul li.dropdown {
     display: inline-block;
-    background: #00f9ff; /* Bright blue */
-    color: black;
+    position: relative;
+}
+
+nav ul li.dropdown .dropbtn {
+    background-color: #00274d;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+}
+
+nav ul li.dropdown:hover .dropbtn {
+    background-color: #0073e6;
+}
+
+nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f4f4f9;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+nav ul li .dropdown-content a {
+    color: #333;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+}
+
+nav ul li .dropdown-content a:hover {
+    background-color: #0073e6;
+    color: white;
+}
+
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    padding-top: 20px;
+    text-align: center; /* Center-align the text within the slideshow */
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%; /* Make sure images take the full width available */
+    margin: 0 auto; /* Center align the images */
+    display: block; /* Ensure the image behaves as a block element */
+    border-radius: 10px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* Heading for Slideshow */
+.slideshow-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center; /* Center-align the heading */
+    font-weight: bold;
+    color: #333; /* Adjust text color */
+}
+
+/* Buttons */
+.cta-button {
+    background-color: #0073e6;
+    color: white;
     padding: 10px 20px;
     text-decoration: none;
-    font-size: 1.1rem;
     border-radius: 5px;
-    transition: background 0.3s;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
 }
 
-/* Ensure sufficient contrast for buttons */
 .cta-button:hover {
-    background: #00d8cc; /* Slightly darker blue for hover */
+    background-color: #005bb5;
 }
 
-/* Footer */
-footer {
+/* Home Page Center Alignment */
+.intro {
     text-align: center;
-    padding: 10px;
-    background: #111;
-    margin-top: 40px;
-}
-
-/* Make sure links are clear when they get focus or are clicked */
-a:focus, .cta-button:focus {
-    outline: 3px solid #00f9ff; /* Add focus outline for accessibility */
-    outline-offset: 2px;
-}
+    padding: 50px 20px;
+    background-color: #f4f4f9; /* Add a background color to distinguish the sections */
+ 
